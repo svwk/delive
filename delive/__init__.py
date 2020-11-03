@@ -9,7 +9,9 @@ app.config.update(
     SESSION_COOKIE_SECURE=True,
     SESSION_COOKIE_HTTPONLY=True,
     SESSION_COOKIE_SAMESITE='Lax',
+    SERVER_NAME='https://svs-delive.herokuapp.com'
 )
+
 
 db.init_app(app)
 migrate.init_app(app, db, f'{config.current_path}/migrations')
