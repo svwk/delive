@@ -15,7 +15,7 @@ def load_config():
         connection_strings = config_data.get("connection_string", "")
         if db_key and connection_strings and (db_key in connection_strings):
             db_uri = connection_strings[db_key]
-            if db_uri[0:3] == "env:":
+            if db_uri[0:4] == "env:":
                 config_data["db_uri"] = os.getenv(db_uri[4:])
             else:
                 config_data["db_uri"] = db_uri
