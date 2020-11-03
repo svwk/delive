@@ -1,0 +1,20 @@
+<section>
+    <h3 class="my-4">{{ cat.title }}</h3>
+    <div class="row mt-4 card-deck">
+        {% for item in dishes|selectattr("category_id", "equalto", cat.id)|list|sample(3) %}
+
+            <div class="card mb-3 border-primary">
+                <img src="{{ url_for('static', filename='pictures/'+ item.picture) }}" width="300" height="200"
+                     class="card-img-top" alt="">
+                <div class="card-body">
+                    <h4 class="h5 card-title text-primary">{{ item.title }}</h4>
+                    <p class="card-text">{{ item.description }}</p>
+                </div>
+                <div class="card-footer bg-transparent border-light text-center">
+                    <a href="{{ url_for('render_addtocart', dish_id= item.id) }}" class="btn btn-primary">В корзину</a>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+</section>

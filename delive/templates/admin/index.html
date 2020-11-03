@@ -1,0 +1,13 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+    {% if session.get("user",None) and session["user"]["role"]==0 %}
+        <h4 class="col-8">Добро пожаловать в панель управления магазином</h4>
+    {% else %}
+        <h4 class="col-8">У вас недостаточно прав для просмотра этой страницы</h4>
+        <a class="btn btn-light btn-sm ml-4" href=" {{ url_for('login') }} ">Вход</a>
+        <a class="btn btn-light btn-sm ml-4" href="{{ url_for('registration') }}">Регистрация</a>
+    {% endif %}
+{% endblock %}
+
+
+
