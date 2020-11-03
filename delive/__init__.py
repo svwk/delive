@@ -5,12 +5,9 @@ from delive.models import db, migrate
 
 app = Flask(__name__)
 app.config.from_object(Config)
-app.config.update(
-    SESSION_COOKIE_SECURE=True,
-    SESSION_COOKIE_HTTPONLY=True,
+app.config.update(       
     SESSION_COOKIE_SAMESITE='Lax',
-    SERVER_NAME='svs-delive.herokuapp.com',
-    SESSION_COOKIE_DOMAIN='https://svs-delive.herokuapp.com'
+    SERVER_NAME='svs-delive.herokuapp.com'   
 )
 
 
