@@ -1,3 +1,4 @@
-import delive
+from delive import *
 
-delive.app.run()
+if __name__ == '__main__':
+    app.run()
